@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>wielka księga sprzengla</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body { font-family: 'Times New Roman', Times, serif; background: #c7c7c7; margin: 0; }
     .header { background: #2908ce; color: white; padding: 20px; text-align: center; font-size: 2em; font-weight: bold; }
@@ -19,7 +18,6 @@
     .category.open .article-list { display: flex; }
     .photo { display: flex; align-items: right;}
   </style>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="header">wielka księga sprzengla</div>
@@ -108,19 +106,63 @@
     </div>
   </div>
 
+  <div style="margin: 40px 0; text-align: center;">
+    <button onclick="window.location.href='podstrona.html'" style="background:#2908ce; color:white; padding:12px 24px; font-size:1em; border:none; cursor:pointer; border-radius:6px; margin-right: 10px;">
+      hiszpańska zagadka
+    </button>
+    <button onclick="window.location.href='guh.html'" style="background:#2908ce; color:white; padding:12px 24px; font-size:1em; border:none; cursor:pointer; border-radius:6px;">
+      gus
+    </button>
+  </div>
+
+  <div style="display: flex; gap: 10px; margin-left: 40px; margin-bottom: 20px; align-items: flex-start; flex-wrap: wrap;">
+    <img src="maryjka.jpg" alt="maryjka" style="max-width: 250px; border: 1px solid #222;">
+    <img src="agartha1.jpg" alt="agartha" style="max-width: 250px; border: 1px solid #222;">
+    <img src="agartha1.jpg" alt="agartha" style="max-width: 250px; border: 1px solid #222;">
+    <img src="cwel.jpg" alt="cwel" style="width: 200px; border: 1px solid #222; height: 700px">
+  </div>
+
+  <div style="margin-left: 40px; margin-bottom: 30px;">
+    <p><strong>citatis:</strong><br>
+      "jaka jest pora roku?" <br>
+      "noc"<br>
+      "Kto szuka problemu ten jest klopotem" <br>
+      "stary czemu ta cebula taka jest" <br>
+      "jaka?" <br>
+      "takiego rozmiaru"<br>
+      "ale napewno ma bardzo dobry charakter"<br>
+      "ale ja będę jadł cebule a nie charakter" <br>
+      "ogólnie ja teraz jestem sam w aucie bo tata poszedł na zakupy a mama umarła 5 lat temu"<br>
+      "ej bo to tak samo jak ludzie mówią że brązowe krowy dają czekoladowe mleko "<br>
+      "brązowe kobiety też?"<br>
+    </p>
+  </div>
+
+  <div style="display: block; gap: 10px; margin-left: 40px; margin-bottom: 30px; align-items: flex-start; ">
+    <h2>peak music</h2>
+    <audio id="audioPlayer" controls style="width:250px; border:1px solid #222; background:#f9f9f9;">
+      <source src="agartha.mp3" type="audio/mpeg">
+      Twoja przeglądarka nie obsługuje odtwarzacza audio.
+    </audio>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <button onclick="window.location.href='dihgra.html'" style="background:#2908ce; color:white; padding:12px 24px; font-size:1em; border:none; cursor:pointer; border-radius:6px;">
+      dihgra
+    </button>
+  </div>
+
+  <div style="display: flex; gap: 10px; margin-left: 40px; margin-bottom: 30px; align-items: flex-start;">
+    <img src="didiblud.jpg" alt="bambus" style="width: 750px; height: 250px; border: 1px solid #222;">
+  </div>
+
   <script>
-    // --- Collapsible categories ---
     function toggleCategory(id) {
       var cat = document.getElementById(id);
-      if (cat.classList.contains('open')) {
-        cat.classList.remove('open');
-      } else {
-        cat.classList.add('open');
-      }
+      cat.classList.toggle('open');
     }
     document.getElementById('cat-animals').classList.add('open');
 
-    // --- Searchbar logic ---
     let articles = [];
     window.addEventListener('DOMContentLoaded', function() {
       articles = Array.from(document.querySelectorAll('.article-link')).map(a => ({name: a.textContent.trim(), link: a.getAttribute('href')}));
@@ -134,7 +176,6 @@
       const matches = articles.filter(a => a.name.toLowerCase().includes(input)).slice(0,5);
       if (matches.length === 0) { sugg.style.display = 'none'; sugg.innerHTML = ''; return; }
       sugg.innerHTML = matches.map(a => `<li style='padding:6px; cursor:pointer;' onclick="window.location.href='${a.link}'">${a.name}</li>`).join('');
-      const rect = searchInput.getBoundingClientRect();
       sugg.style.left = searchInput.offsetLeft + 'px';
       sugg.style.top = (searchInput.offsetTop + searchInput.offsetHeight) + 'px';
       sugg.style.display = 'block';
@@ -157,94 +198,5 @@
       }
     });
   </script>
-    <div style="margin: 40px 0;">
-    <button onclick="window.location.href='podstrona.html'" 
-            style="background:#2908ce; color:white; padding:12px 24px; font-size:1em; border:none; cursor:pointer; border-radius:6px;">
-      hiszpańska zagadka
-    </button>
-      <button onclick="window.location.href='guh.html'" 
-            style="background:#2908ce; color:white; padding:12px 24px; font-size:1em; border:none; cursor:pointer; border-radius:6px;">
-      gus
-    </button>
-  </div>
-   <div style="display: flex; gap: 10px; margin-left: 40px; margin-bottom: 30px; align-items: flex-start;">
-      <img src="maryjka.jpg" alt="maryjka"
-         style="max-width: 250px; border: 1px solid #222;">
-      <img src="agartha1.jpg" alt="maryjka"
-         style="max-width: 250px; border: 1px solid #222;">
-      <img src="agartha1.jpg" alt="maryjka"
-         style="max-width: 250px; border: 1px solid #222;">
-      <img src="cwel.jpg" alt="maryjka"
-         style="width: 200px; border: 1px solid #222; height: 700px">
-     <p>citatis:<br>
-     "jaka jest pora roku?" <br>
-      "noc"<br>
-     "Kto szuka problemu ten jest klopotem" <br>
-      "stary czemu ta cebula taka jest" <br>
-      "jaka?" <br>
-      "takiego rozmiaru"<br>
-      "ale napewno ma bardzo dobry charakter"<br>
-      "ale ja będę jadł cebule a nie charakter" <br>
-       "ogólnie ja teraz jestem sam w aucie bo tata poszedł na zakupy a mama umarła 5 lat temu"<br>
-       "ej bo to tak samo jak ludzie mówią że brązowe krowy dają czekoladowe mleko "<br>
-        "brązowe kobiety też?"<br>
-     </p>
-   </div>
-    <br>
-       <div style="display: block; gap: 10px; margin-left: 40px; margin-bottom: 30px; align-items: flex-start; ">
-          <h2>peak music</h2>
-          <audio id="audioPlayer" controls style="width:250px; border:1px solid #222; background:#f9f9f9;">
-            <source src="agartha.mp3" type="audio/mpeg">
-            Twoja przeglądarka nie obsługuje odtwarzacza audio.
-          </audio>
-        </div>
-    <div style="text-align: center; margin: 40px 0;">
-      <button onclick="window.location.href='dihgra.html'" 
-              style="background:#2908ce; color:white; padding:12px 24px; font-size:1em; border:none; cursor:pointer; border-radius:6px;">
-        dihgra
-      </button>
-    </div>
-    <div style="display: flex; gap: 10px; margin-left: 40px; margin-bottom: 30px; align-items: flex-start;">
-      <img src="didiblud.jpg" alt="bambus"
-         style="width: 750px; height: 250px; border: 1px solid #222;">
-   </div>
-  </body>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
